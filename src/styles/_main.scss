@@ -1,0 +1,88 @@
+.wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.cardWrapper {
+	display: grid;
+	justify-content: center;
+}
+
+.cards {
+	position: relative;
+	text-align: center;
+	max-width: 300px;
+	margin: 0 auto 4rem auto;
+	h2 {
+		font-size: 3rem;
+	}
+
+	img {
+		margin-bottom: 0.5rem;
+		height: 400px;
+		width: auto;
+	}
+
+	.quickInfo {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 2rem;
+		&:last-child,
+		&:first-child {
+			margin: 0.5rem;
+		}
+	}
+
+	.saveBtn {
+		display: inline-block;
+		background: $accentOne;
+		color: #000;
+		padding: 1rem 1rem;
+		text-decoration: none;
+		font-size: 1.2rem;
+		letter-spacing: 0.7px;
+		text-transform: uppercase;
+		width: 50%;
+
+		&:hover {
+			background: $mainColor;
+		}
+	}
+}
+
+.infoIcon {
+	position: absolute;
+	font-size: 1.5rem;
+	color: $accentOne;
+	right: 5px;
+	bottom: 50px;
+
+
+	i {
+		position: relative;
+	}
+
+	&::before {
+		content: 'More info';
+		font-size: 1.3rem;
+		white-space: nowrap;
+		position: absolute;
+		// width: 100%;
+		left: -55px;
+		bottom: 2px;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 250ms ease-in;
+	}
+}
+
+a:hover ~ .infoIcon:before {
+	transform: scaleX(1);
+}
+
+
+a:hover img {
+	opacity: 0.5;
+}

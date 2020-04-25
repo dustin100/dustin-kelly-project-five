@@ -1,0 +1,29 @@
+@media (min-width: 610px) {
+	.cardWrapper {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem;
+	}
+}
+
+@media (min-width: 1000px) {
+	.cardWrapper {
+		grid-template-columns: repeat(3, 1fr);
+		
+	}
+
+	.searchBtn {
+		width:20%;
+	}
+	.searchSite {
+	width: 60%;
+	}
+
+	
+}
+
+@media (min-width: 1400px) {
+	.cardWrapper {
+		grid-template-columns: repeat(4, 1fr);
+		
+	}
+}
