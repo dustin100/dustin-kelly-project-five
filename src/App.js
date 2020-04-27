@@ -11,28 +11,40 @@ class App extends Component {
 		super(props);
 		this.state = {
 			list: [],
+			searchQ: '',
 		};
 	}
-	
-		fetchData = async () => {
-			try {
-				const listRequest = await axios.get('http://www.omdbapi.com/', {
-					params: {
-						apikey: '4790b397',
-						s: 'star trek',
-					},
-				});
-				this.setState({
-					list: listRequest.data.Search,
-				});
-				console.log(this.state);
-			} catch (err) {
-				console.log(err);
-			}
-		};
+
+	fetchData = async () => {
+		try {
+			const listRequest = await axios.get('http://www.omdbapi.com/', {
+				params: {
+					apikey: '4790b397',
+					s: this.state.searchQ ? this.state.searchQ : 'star wars',
+				
+				},
+			});
+			this.setState({
+				list: listRequest.data.Search,
+			});
+			console.log(this.state);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 	componentDidMount() {
 		this.fetchData();
 	}
+
+	componentDidUpdate() {
+		this.fetchData();
+	}
+
+	onSubmittedSearch = (searchQ) => {
+		this.setState({
+			searchQ: searchQ,
+		});
+	};
 
 	render() {
 		return (
@@ -41,8 +53,8 @@ class App extends Component {
 					title="Free Time"
 					tagLine="Find your favorite movies or tv shows to watch later when you have some free time"
 				/>
-				<SearchBar />
-				<Cards list = {this.state.list}/>
+				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
+				<Cards list={this.state.list} />
 				<Footer companyName="Dustin" />
 			</div>
 		);
