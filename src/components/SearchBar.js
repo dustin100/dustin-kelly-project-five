@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+	constructor() {
+		super();
+		this.state = {
+			searchQ: '',
+		};
+	}
+
+
+	
 	render() {
 		return (
 			<section>
 				<div className="wrapper searchBarArea">
-					<label className="visuallyHidden" for="site-search">
+					<label className="visuallyHidden" htmlFor="site-search">
 						Search the site:
 					</label>
 					<input

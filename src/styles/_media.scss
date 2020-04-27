@@ -8,22 +8,22 @@
 @media (min-width: 1000px) {
 	.cardWrapper {
 		grid-template-columns: repeat(3, 1fr);
-		
 	}
 
 	.searchBtn {
-		width:20%;
+		width: 20%;
 	}
-	.searchSite {
-	width: 60%;
+	input[type='search'] {
+		width: 60%;
 	}
 
-	
+	.submit::-moz-focus-inner {
+		border: 0;
+	}
 }
 
 @media (min-width: 1400px) {
 	.cardWrapper {
 		grid-template-columns: repeat(4, 1fr);
-		
 	}
 }

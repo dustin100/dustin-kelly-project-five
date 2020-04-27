@@ -4,9 +4,14 @@
 	width: 90%;
 }
 
+body {
+	background: $mainColor;
+}
+
 .cardWrapper {
 	display: grid;
 	justify-content: center;
+	margin-bottom: 4rem;
 }
 
 .cards {
@@ -14,21 +19,30 @@
 	text-align: center;
 	max-width: 300px;
 	margin: 0 auto 4rem auto;
+
 	h2 {
-		font-size: 3rem;
+		font-size: 2.5rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&Bottom {
+		background: #000;
 	}
 
 	img {
-		margin-bottom: 0.5rem;
 		height: 400px;
-		width: auto;
+		width: 300px;
 	}
 
 	.quickInfo {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		color: #fff;
 		font-size: 2rem;
+		padding-right: 0.5rem;
 		&:last-child,
 		&:first-child {
 			margin: 0.5rem;
@@ -39,14 +53,16 @@
 		display: inline-block;
 		background: $accentOne;
 		color: #000;
-		padding: 1rem 1rem;
+		padding: 1.5rem 1rem;
+		border: none;
 		text-decoration: none;
 		font-size: 1.2rem;
 		letter-spacing: 0.7px;
 		text-transform: uppercase;
 		width: 50%;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background: $mainColor;
 		}
 	}
@@ -59,7 +75,6 @@
 	right: 5px;
 	bottom: 50px;
 
-
 	i {
 		position: relative;
 	}
@@ -67,10 +82,11 @@
 	&::before {
 		content: 'More info';
 		font-size: 1.3rem;
+		font-weight: bold;
 		white-space: nowrap;
 		position: absolute;
 		// width: 100%;
-		left: -55px;
+		left: -59px;
 		bottom: 2px;
 		transform: scaleX(0);
 		transform-origin: right;
@@ -78,11 +94,12 @@
 	}
 }
 
-a:hover ~ .infoIcon:before {
+.imgLink:hover ~ .infoIcon:before,
+.cards:focus .infoIcon:before {
 	transform: scaleX(1);
 }
 
-
-a:hover img {
+.imgLink:hover img,
+.cards:focus img {
 	opacity: 0.5;
 }

@@ -1,24 +1,29 @@
 .searchBarArea {
 	text-align: center;
+	padding-bottom: 5rem;
 }
 
-.searchSite {
+input[type='search'] {
+	display: inline-block;
 	width: 90%;
-	height: 3rem;
+	font-size: 2rem;
 	margin-bottom: 0.5rem;
+	padding: 1rem 1.5rem;
+	-webkit-appearance: none;
 }
 
 .searchBtn {
 	display: inline-block;
 	background: $accentOne;
 	color: #000;
-	padding: 0.5rem 1.5rem;
+	padding: 1rem 1.5rem;
 	text-decoration: none;
 	font-size: 2rem;
 	letter-spacing: 0.7px;
 	text-transform: uppercase;
 	width: 90%;
-	margin-bottom: 4rem;
+	-webkit-appearance: none;
+	border-color: $accentOne;
 
 	&:hover {
 		background: $mainColor;
