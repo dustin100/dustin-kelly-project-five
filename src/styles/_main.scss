@@ -25,13 +25,14 @@ body {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		color: $darkColor;
 	}
 
 	&Bottom {
 		background: #000;
 	}
 
-	img {
+	input[type='image'] {
 		height: 400px;
 		width: 300px;
 	}
@@ -54,7 +55,7 @@ body {
 		background: $accentOne;
 		color: #000;
 		padding: 1.5rem 1rem;
-		border: none;
+		border: 1px solid $accentOne;
 		text-decoration: none;
 		font-size: 1.2rem;
 		letter-spacing: 0.7px;
@@ -63,7 +64,7 @@ body {
 
 		&:hover,
 		&:focus {
-			background: $mainColor;
+			background: $accentTwo;
 		}
 	}
 }
@@ -99,7 +100,7 @@ body {
 	transform: scaleX(1);
 }
 
-.imgLink:hover img,
-.cards:focus img {
-	opacity: 0.5;
+.imgLink:hover,
+.cards:focus input[type='image'] {
+	opacity: 0.2;
 }

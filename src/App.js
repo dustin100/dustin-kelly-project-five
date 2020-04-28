@@ -11,7 +11,7 @@ class App extends Component {
 		super(props);
 		this.state = {
 			list: [],
-			searchQ: '',
+			userInput: '',
 		};
 	}
 
@@ -20,18 +20,17 @@ class App extends Component {
 			const listRequest = await axios.get('http://www.omdbapi.com/', {
 				params: {
 					apikey: '4790b397',
-					s: this.state.searchQ ? this.state.searchQ : 'star wars',
-				
+					s: this.state.userInput ? this.state.userInput : 'star wars',
 				},
 			});
 			this.setState({
 				list: listRequest.data.Search,
 			});
-			console.log(this.state);
 		} catch (err) {
 			console.log(err);
 		}
 	};
+
 	componentDidMount() {
 		this.fetchData();
 	}
@@ -40,13 +39,14 @@ class App extends Component {
 		this.fetchData();
 	}
 
-	onSubmittedSearch = (searchQ) => {
+	onSubmittedSearch = (userInput) => {
 		this.setState({
-			searchQ: searchQ,
+			userInput: userInput,
 		});
 	};
 
 	render() {
+		
 		return (
 			<div className="App">
 				<Header

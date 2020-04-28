@@ -1,14 +1,15 @@
-
 .headContent {
-text-align: center;
+	text-align: center;
 
-    h1 {
-        font-size: 4rem;
+	h1 {
+		font-size: 6rem;
         margin: 1rem 0;
-    }
+        color: $accentOne;
+	}
 
-    p {
-        font-size: 1.5rem;
+	p {
+		font-size: 2rem;
         margin-bottom: 1rem;
-    }
+        color: $darkColor;
+	}
 }

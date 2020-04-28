@@ -4,19 +4,19 @@ class SearchBar extends Component {
 	constructor() {
 		super();
 		this.state = {
-			searchQ: '',
+			userInput: '',
 		};
 	}
 
 	handleChange = (e) => {
 		this.setState({
-			searchQ: e.target.value,
+			userInput: e.target.value,
 		});
 	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.onSubmittedSearch(this.state.searchQ);
+		this.props.onSubmittedSearch(this.state.userInput);
 	};
 
 	render() {
