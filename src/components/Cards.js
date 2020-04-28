@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Button from './SaveButton'
+import CardImage from './CardImage';
+import Button from './SaveButton';
 import firebase from './firebase';
 import textToIcon, { defaultImage } from './helpers';
 
@@ -11,8 +12,6 @@ class Cards extends Component {
 		};
 	}
 
-	
-
 	render() {
 		return (
 			<main className="cardWrapper wrapper">
@@ -23,13 +22,13 @@ class Cards extends Component {
 								<h2>{item.Title}</h2>
 							</div>
 							<div className="cardsBottom">
-								{/* <a href="#" className="imgLink">
-									<img
-										src={defaultImage(item.Poster)}
-										alt="movie title poster"
-									/>
-								</a> */}
-								<input className="imgLink" type="image" src={item.Poster} />
+								{/* <input
+									className="imgLink"
+									type="image"
+									alt={item.Title}
+									src={defaultImage(item.Poster)}
+								/> */}
+								{<CardImage altText={item.Title} poster={item.Poster} />}
 								<div className="quickInfo">
 									{<Button />}
 									<p className="type">{textToIcon(item.Type)}</p>
