@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Cards from './components/Cards';
 import Footer from './components/Footer';
+
 import './App.scss';
 
 class App extends Component {
@@ -46,7 +47,6 @@ class App extends Component {
 	};
 
 	render() {
-		
 		return (
 			<div className="App">
 				<Header

@@ -96,11 +96,11 @@ body {
 }
 
 .imgLink:hover ~ .infoIcon:before,
-.cards:focus .infoIcon:before {
+.imgLink:focus .infoIcon:before {
 	transform: scaleX(1);
 }
 
 .imgLink:hover,
-.cards:focus {
+.imgLink:focus {
 	opacity: 0.2;
 }

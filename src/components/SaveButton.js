@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class SaveButton extends Component {
 	constructor(props) {
 		super(props);
@@ -9,7 +10,6 @@ class SaveButton extends Component {
 	}
 
 	handleSaveClick = (e) => {
-		console.log(e.target.innerHTML);
 		this.setState({
 			saved: !this.state.saved,
 		});

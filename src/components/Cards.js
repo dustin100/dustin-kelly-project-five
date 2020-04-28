@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardImage from './CardImage';
 import Button from './SaveButton';
+
 import firebase from './firebase';
 import textToIcon, { defaultImage } from './helpers';
 
@@ -28,7 +29,13 @@ class Cards extends Component {
 									alt={item.Title}
 									src={defaultImage(item.Poster)}
 								/> */}
-								{<CardImage altText={item.Title} poster={item.Poster} />}
+								{
+									<CardImage
+										altText={item.Title}
+										poster={item.Poster}
+										imdbID={item.imdbID}
+									/>
+								}
 								<div className="quickInfo">
 									{<Button />}
 									<p className="type">{textToIcon(item.Type)}</p>

@@ -1,0 +1,35 @@
+.showOverlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #000;
+	opacity: 0.9;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 2;
+	color: #fff;
+
+	h2 {
+		font-size: 4rem;
+		text-align: center;
+		color: #fff;
+	}
+
+	p {
+		font-size: 2rem;
+	}
+}
+
+.showDetails {
+	display: flex;
+
+	font-size: 2rem;
+
+	li {
+		margin-right: 1rem;
+	}
+}
