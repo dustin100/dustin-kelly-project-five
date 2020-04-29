@@ -22,14 +22,14 @@ class Overlay extends Component {
 						<li>{rated}</li>
 						<li>
 							{rating}
-							<span className ="ratingStar">
-								<i class="fas fa-star"></i>
+							<span className="ratingStar">
+								<i className="fas fa-star"></i>
 							</span>
 						</li>
 					</ul>
 					<p className="showDesc">{plot}</p>
 					<button className="closeOverlay" onClick={this.closeOverlay}>
-						<i class="far fa-times-circle"></i>
+						<i className="far fa-times-circle"></i>
 					</button>
 					<SaveButton />
 				</div>
