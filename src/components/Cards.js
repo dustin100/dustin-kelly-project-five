@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import CardImage from './CardImage';
-import Button from './SaveButton';
+import SaveButton from './SaveButton';
 import textToIcon, { defaultImage } from './helpers';
 
 class Cards extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			OverLay: false,
-		};
+		
 	}
 
 	render() {
@@ -21,12 +19,6 @@ class Cards extends Component {
 								<h2>{item.Title}</h2>
 							</div>
 							<div className="cardsBottom">
-								{/* <input
-									className="imgLink"
-									type="image"
-									alt={item.Title}
-									src={defaultImage(item.Poster)}
-								/> */}
 								{
 									<CardImage
 										altText={item.Title}
@@ -35,7 +27,7 @@ class Cards extends Component {
 									/>
 								}
 								<div className="quickInfo">
-									{<Button />}
+									{<SaveButton />}
 									<p className="type">{textToIcon(item.Type)}</p>
 									<p className="releaseYear">{item.Year}</p>
 								</div>

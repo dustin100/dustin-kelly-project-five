@@ -8,6 +8,7 @@ class SearchBar extends Component {
 		};
 	}
 
+	
 	handleChange = (e) => {
 		this.setState({
 			userInput: e.target.value,
