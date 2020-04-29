@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import CardImage from './CardImage';
 import Button from './SaveButton';
-
-import firebase from './firebase';
 import textToIcon, { defaultImage } from './helpers';
 
 class Cards extends Component {
