@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import firebase from './firebase';
 
 class SaveButton extends Component {
@@ -6,13 +7,23 @@ class SaveButton extends Component {
 		super(props);
 		this.state = {
 			saved: false,
+			storedInfo: {},
 		};
 	}
 
 	handleSaveClick = (e) => {
-		this.setState({
-			saved: !this.state.saved,
-		});
+		this.setState(
+			{
+				saved: !this.state.saved,
+				storedInfo: this.props,
+			},
+			this.saveDataToDb
+		);
+	};
+
+	saveDataToDb = () => {
+		const dbRef = firebase.database().ref();
+		dbRef.push(this.state);
 	};
 
 	render() {

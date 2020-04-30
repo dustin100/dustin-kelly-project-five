@@ -15,7 +15,15 @@ const Cards = (props) => {
 						<div className="cardsBottom">
 							{<CardImage altText={Title} poster={Poster} imdbID={imdbID} />}
 							<div className="quickInfo">
-								{<SaveButton />}
+								{
+									<SaveButton
+										imdbID={imdbID}
+										Title={Title}
+										Poster={Poster}
+										Type={Type}
+										Year={Year}
+									/>
+								}
 								<p className="type">{textToIcon(Type)}</p>
 								<p className="releaseYear">{Year}</p>
 							</div>
