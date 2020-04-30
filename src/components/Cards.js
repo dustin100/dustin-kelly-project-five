@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CardImage from './CardImage';
 import SaveButton from './SaveButton';
 import textToIcon, { defaultImage } from './helpers';

@@ -1,11 +1,12 @@
 .searchBarArea {
 	text-align: center;
 	padding-bottom: 5rem;
+	overflow: hidden;
 }
 
 input[type='search'] {
 	display: inline-block;
-	width: 90%;
+	width: 100%;
 	font-size: 2rem;
 	margin-bottom: 0.5rem;
 	padding: 1rem 1.5rem;
@@ -21,7 +22,7 @@ input[type='search'] {
 	font-size: 2rem;
 	letter-spacing: 0.7px;
 	text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 	-webkit-appearance: none;
 	border-color: $accentOne;
 

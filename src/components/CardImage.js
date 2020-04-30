@@ -45,6 +45,10 @@ class CardImage extends Component {
 			Runtime,
 			Title,
 			imdbRating,
+			imdbID,
+			Type,
+			Year,
+			Poster,
 		} = this.state.moreInfo;
 		let item;
 		if (this.state.overlay === true) {
@@ -56,6 +60,10 @@ class CardImage extends Component {
 					runtime={Runtime}
 					title={Title}
 					rating={imdbRating}
+					imdbID={imdbID}
+					Type={Type}
+					Year={Year}
+					Poster={Poster}
 					handleImageClick={this.handleImageClick}
 				/>
 			);

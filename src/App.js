@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import Cards from './components/Cards';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
+import firebase from './components/firebase';
 
 import './App.scss';
 
@@ -14,6 +15,8 @@ class App extends Component {
 		this.state = {
 			list: [],
 			userInput: '',
+			favsInFb: [],
+			toggleView: false,
 		};
 	}
 
@@ -35,8 +38,15 @@ class App extends Component {
 
 	componentDidMount() {
 		this.fetchData();
+		// grabs data from firebase and coverts the object into an array and adds it to state
+		const dbRef = firebase.database().ref();
+		dbRef.on('value', (data) => {
+			const favsInArray = Object.values(data.val());
+			this.setState({
+				favsInFb: favsInArray,
+			});
+		});
 	}
-
 
 	onSubmittedSearch = (userInput) => {
 		this.setState(
@@ -47,20 +57,24 @@ class App extends Component {
 		);
 	};
 
-	
+	showFavs = () => {
+		this.setState({ toggleView: !this.state.toggleView });
+	};
 
 	render() {
-		console.log(this.state.list);
+		const { toggleView, favsInFb, list } = this.state;
 		return (
 			<div className="App">
 				<Header
 					title="Free Time"
 					tagLine="Find your favorite movies or tv shows to watch later when you have some free time"
+					showFavs={this.showFavs}
 				/>
 				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
 
-				{this.state.list.length ? (
-					<Cards list={this.state.list} />
+				{/* Shows a loading screen if the array is empty */}
+				{list.length ? (
+					<Cards list={toggleView ? favsInFb : list} favsInFb={favsInFb} />
 				) : (
 					<Loading />
 				)}

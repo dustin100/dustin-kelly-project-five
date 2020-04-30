@@ -1,15 +1,30 @@
 .headContent {
+	position: relative;
 	text-align: center;
 
 	h1 {
 		font-size: 6rem;
-        margin: 1rem 0;
-        color: $accentOne;
+		margin: 1rem 0;
+		color: $accentOne;
 	}
 
 	p {
 		font-size: 2rem;
-        margin-bottom: 1rem;
-        color: $darkColor;
+		margin-bottom: 1rem;
+		color: $darkColor;
+	}
+}
+
+.userList {
+	position: absolute;
+	font-size: 3rem;
+	right: 0;
+	top: 0;
+	color: $accentOne;
+	transition: 300ms transform ease-in-out;
+	&:hover {
+		transform: rotate(90deg);
+		color: $accentTwo;
+		cursor: pointer;
 	}
 }

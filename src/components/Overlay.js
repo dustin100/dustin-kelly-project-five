@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import SaveButton from './SaveButton';
 
 class Overlay extends Component {
-	constructor(props) {
-		super(props);
-	}
+
 	closeOverlay = () => {
 		this.props.handleImageClick();
 	};
 
 	render() {
-		const { plot, genre, rated, runtime, title, rating } = this.props;
+		const {
+			plot,
+			genre,
+			rated,
+			runtime,
+			title,
+			rating,
+			imdbID,
+			Type,
+			Year,
+			Poster,
+		} = this.props;
 		return (
 			<div className="showOverlay">
 				<div className="wrapper">
@@ -19,7 +28,6 @@ class Overlay extends Component {
 						<li>{rated}</li>
 						<li>{runtime}</li>
 						<li>{genre}</li>
-						<li>{rated}</li>
 						<li>
 							{rating}
 							<span className="ratingStar">
@@ -31,7 +39,13 @@ class Overlay extends Component {
 					<button className="closeOverlay" onClick={this.closeOverlay}>
 						<i className="far fa-times-circle"></i>
 					</button>
-					<SaveButton />
+					<SaveButton
+						imdbID={imdbID}
+						Title={title}
+						Poster={Poster}
+						Type={Type}
+						Year={Year}
+					/>
 				</div>
 			</div>
 		);
