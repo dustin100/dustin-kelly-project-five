@@ -4,7 +4,6 @@ import SaveButton from './SaveButton';
 import textToIcon, { defaultImage } from './helpers';
 
 const Cards = (props) => {
-	 
 	return (
 		<main className="cardWrapper wrapper">
 			{props.list.map(({ Title, imdbID, Poster, Type, Year }) => {

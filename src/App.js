@@ -37,18 +37,20 @@ class App extends Component {
 		this.fetchData();
 	}
 
-	componentDidUpdate() {
-		this.fetchData();
-	}
 
 	onSubmittedSearch = (userInput) => {
-		this.setState({
-			userInput: userInput,
-		});
+		this.setState(
+			{
+				userInput: userInput,
+			},
+			this.fetchData
+		);
 	};
 
+	
+
 	render() {
-		console.log(this.state.list)
+		console.log(this.state.list);
 		return (
 			<div className="App">
 				<Header
