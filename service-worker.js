@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dustin-kelly-project-five/precache-manifest.45ab20da9adadcaefdf3f318e9b459fb.js"
+  "/dustin-kelly-project-five/precache-manifest.1a13f7637283219d77afaa0a1f11e8be.js"
 );
 
 self.addEventListener('message', (event) => {
