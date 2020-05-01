@@ -16,7 +16,9 @@ class SaveButton extends Component {
 				saved: !this.state.saved,
 				storedInfo: this.props,
 			},
-			this.saveDataToDb
+			() => {
+				this.saveDataToDb();
+			}
 		);
 	};
 
@@ -25,13 +27,10 @@ class SaveButton extends Component {
 		dbRef.push(this.state.storedInfo);
 	};
 
-	
-
 	// returns true or false
 	checkMatches = (id) => {
 		return this.props.savedList.includes(id);
-
-	}
+	};
 
 	render() {
 		return (

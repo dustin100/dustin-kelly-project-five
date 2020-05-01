@@ -17,7 +17,6 @@ class App extends Component {
 			userInput: '',
 			favsInFb: [],
 			toggleView: false,
-			matches: [],
 		};
 	}
 
@@ -43,16 +42,11 @@ class App extends Component {
 		const dbRef = firebase.database().ref();
 		dbRef.on('value', (data) => {
 			const favsInArray = Object.values(data.val());
-			this.setState(
-				{
-					favsInFb: favsInArray,
-				},
-				this.compareLists
-			);
+			this.setState({
+				favsInFb: favsInArray,
+			});
 		});
 	}
-
-	
 
 	onSubmittedSearch = (userInput) => {
 		this.setState(
@@ -60,7 +54,9 @@ class App extends Component {
 				userInput: userInput,
 				toggleView: false,
 			},
-			this.fetchData
+			() => {
+				this.fetchData();
+			}
 		);
 	};
 
@@ -69,7 +65,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { toggleView, favsInFb, matches, list } = this.state;
+		const { toggleView, favsInFb, list } = this.state;
 		return (
 			<div className="App">
 				<Header
