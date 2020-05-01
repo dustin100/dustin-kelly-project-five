@@ -14,7 +14,7 @@ class CardImage extends Component {
 
 	fetchData = async () => {
 		try {
-			const info = await axios.get('http://www.omdbapi.com/', {
+			const info = await axios.get('https://www.omdbapi.com/', {
 				params: {
 					apikey: '4790b397',
 					i: this.state.imdbID,

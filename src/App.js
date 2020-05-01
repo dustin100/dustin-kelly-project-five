@@ -22,7 +22,7 @@ class App extends Component {
 
 	fetchData = async () => {
 		try {
-			const listRequest = await axios.get('http://www.omdbapi.com/', {
+			const listRequest = await axios.get('https://www.omdbapi.com/', {
 				params: {
 					apikey: '4790b397',
 					s: this.state.userInput ? this.state.userInput : 'star wars',
