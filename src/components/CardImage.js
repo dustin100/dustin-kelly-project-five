@@ -65,6 +65,7 @@ class CardImage extends Component {
 					Year={Year}
 					Poster={Poster}
 					handleImageClick={this.handleImageClick}
+					savedList={this.props.savedList}
 				/>
 			);
 		}

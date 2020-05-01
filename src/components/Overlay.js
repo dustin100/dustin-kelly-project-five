@@ -45,6 +45,7 @@ class Overlay extends Component {
 						Poster={Poster}
 						Type={Type}
 						Year={Year}
+						savedList={this.props.savedList}
 					/>
 				</div>
 			</div>

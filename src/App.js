@@ -17,6 +17,7 @@ class App extends Component {
 			userInput: '',
 			favsInFb: [],
 			toggleView: false,
+			matches: [],
 		};
 	}
 
@@ -42,11 +43,16 @@ class App extends Component {
 		const dbRef = firebase.database().ref();
 		dbRef.on('value', (data) => {
 			const favsInArray = Object.values(data.val());
-			this.setState({
-				favsInFb: favsInArray,
-			});
+			this.setState(
+				{
+					favsInFb: favsInArray,
+				},
+				this.compareLists
+			);
 		});
 	}
+
+	
 
 	onSubmittedSearch = (userInput) => {
 		this.setState(
@@ -63,7 +69,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { toggleView, favsInFb, list } = this.state;
+		const { toggleView, favsInFb, matches, list } = this.state;
 		return (
 			<div className="App">
 				<Header
@@ -74,11 +80,11 @@ class App extends Component {
 				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
 
 				{/* Shows a loading screen if the array is empty */}
-				{list.length ? (
+				{list ? (
 					<Cards
 						list={toggleView ? favsInFb : list}
 						pageTitle={toggleView ? 'My Saved List' : 'Search Results'}
-						favsInFb={favsInFb}
+						savedList={this.state.favsInFb.map((item) => item.imdbID)}
 					/>
 				) : (
 					<Loading />

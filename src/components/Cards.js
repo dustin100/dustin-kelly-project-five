@@ -30,7 +30,14 @@ const Cards = (props) => {
 								<h2>{Title}</h2>
 							</div>
 							<div className="cardsBottom">
-								{<CardImage altText={Title} poster={defaultImage(Poster)} imdbID={imdbID} />}
+								{
+									<CardImage
+										altText={Title}
+										poster={defaultImage(Poster)}
+										imdbID={imdbID}
+										savedList={props.savedList}
+									/>
+								}
 								<div className="quickInfo">
 									{
 										<SaveButton
@@ -39,8 +46,7 @@ const Cards = (props) => {
 											Poster={Poster}
 											Type={Type}
 											Year={Year}
-											favIds={props.favsInFb.map((item) => item.imdbID)}
-											searchIds={props.list.map((item) => item.imdbID)}
+											savedList={props.savedList}
 										/>
 									}
 									<p className="type">{textToIcon(Type)}</p>

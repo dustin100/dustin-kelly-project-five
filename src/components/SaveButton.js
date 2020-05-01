@@ -10,7 +10,7 @@ class SaveButton extends Component {
 		};
 	}
 
-	handleSaveClick = (e) => {
+	handleSaveClick = () => {
 		this.setState(
 			{
 				saved: !this.state.saved,
@@ -25,28 +25,19 @@ class SaveButton extends Component {
 		dbRef.push(this.state.storedInfo);
 	};
 
-	// componentDidUpdate(props) {
-	// 	const arrayOne = this.props.favIds;
-	// 	const arrayTwo = this.props.searchIds;
+	
 
-	// 	const final = arrayOne.filter((element) => arrayTwo.includes(element));
+	// returns true or false
+	checkMatches = (id) => {
+		return this.props.savedList.includes(id);
 
-	// 	console.log(final);
-
-	// 	final.map((id) => {
-	// 		if(this.props.imdbID === id) {
-	// 			this.setState({
-	// 				saved:true,
-	// 			});
-	// 		}
-	// 	});
-	// }
+	}
 
 	render() {
 		return (
 			<button onClick={this.handleSaveClick} className="watch saveBtn">
 				Add to List{' '}
-				{this.state.saved ? (
+				{this.checkMatches(this.props.imdbID) ? (
 					<i className="fas fa-heart"></i>
 				) : (
 					<i className="far fa-heart"></i>
