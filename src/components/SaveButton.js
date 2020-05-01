@@ -25,6 +25,22 @@ class SaveButton extends Component {
 		dbRef.push(this.state.storedInfo);
 	};
 
+	componentDidUpdate(props) {
+		let arrayOne = this.props.favIds;
+		const arrayTwo = this.props.searchIds;
+
+		const final = arrayOne.filter((element) => arrayTwo.includes(element));
+
+			
+		// final.map((id) => {
+		// 	if(this.props.imdbID === id) {
+		// 		this.setState({
+		// 			saved:true,
+		// 		});
+		// 	}
+		// });
+	}
+
 	render() {
 		return (
 			<button onClick={this.handleSaveClick} className="watch saveBtn">

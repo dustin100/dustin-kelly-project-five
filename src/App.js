@@ -52,6 +52,7 @@ class App extends Component {
 		this.setState(
 			{
 				userInput: userInput,
+				toggleView: false,
 			},
 			this.fetchData
 		);
@@ -74,7 +75,11 @@ class App extends Component {
 
 				{/* Shows a loading screen if the array is empty */}
 				{list.length ? (
-					<Cards list={toggleView ? favsInFb : list} favsInFb={favsInFb} />
+					<Cards
+						list={toggleView ? favsInFb : list}
+						pageTitle={toggleView ? 'My Saved List' : 'Search Results'}
+						favsInFb={favsInFb}
+					/>
 				) : (
 					<Loading />
 				)}

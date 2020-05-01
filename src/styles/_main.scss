@@ -8,6 +8,12 @@ body {
 	background: $mainColor;
 }
 
+.pageTitle {
+	font-size: 3rem;
+	margin-bottom: 4rem;
+	text-align: center;
+}
+
 .cardWrapper {
 	display: grid;
 	justify-content: center;
