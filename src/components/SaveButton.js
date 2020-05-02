@@ -17,7 +17,7 @@ class SaveButton extends Component {
 				storedInfo: this.props,
 			},
 			() => {
-				this.saveDataToDb();
+				this.state.saved === true ? this.saveDataToDb() : this.deleteItem();
 			}
 		);
 	};
@@ -27,19 +27,41 @@ class SaveButton extends Component {
 		dbRef.push(this.state.storedInfo);
 	};
 
+	deleteItem = () => {
+		const dbRef = firebase.database().ref();
+		dbRef.once('value', (snapshot) => {
+			const data = snapshot.val();
+			for (let firebaseKey in data) {
+				if (data[firebaseKey].imdbID === this.props.imdbID) {
+					const itemRef = firebase.database().ref(firebaseKey);
+					itemRef.remove();
+				}
+			}
+		});
+	};
+
 	// returns true or false
 	checkMatches = (id) => {
 		return this.props.savedList.includes(id);
 	};
 
+	componentDidMount() {
+		if (this.checkMatches(this.props.imdbID)) {
+			this.setState({ saved: true });
+		}
+	}
+
 	render() {
 		return (
 			<button onClick={this.handleSaveClick} className="watch saveBtn">
-				Add to List{' '}
 				{this.checkMatches(this.props.imdbID) ? (
-					<i className="fas fa-heart"></i>
+					<span>
+						Saved <i className="fas fa-heart"></i>
+					</span>
 				) : (
-					<i className="far fa-heart"></i>
+					<span>
+						Add to List <i className="far fa-heart"></i>
+					</span>
 				)}
 			</button>
 		);
