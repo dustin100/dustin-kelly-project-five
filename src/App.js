@@ -15,7 +15,7 @@ class App extends Component {
 		this.state = {
 			list: [],
 			userInput: '',
-			favsInFb: [],
+			favList: [],
 			toggleView: false,
 		};
 	}
@@ -40,10 +40,12 @@ class App extends Component {
 		this.fetchData();
 		// grabs data from firebase and coverts the object into an array and adds it to state
 		const dbRef = firebase.database().ref();
-		dbRef.on('value', (data) => {
-			const favsInArray = Object.values(data.val());
+		dbRef.on('value', (result) => {
+			const favsInArray = Object.values(result.val());
+
 			this.setState({
-				favsInFb: favsInArray,
+				favList: favsInArray,
+
 			});
 		});
 	}
@@ -65,7 +67,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { toggleView, favsInFb, list } = this.state;
+		const { toggleView, favList, list } = this.state;
 		return (
 			<div className="App">
 				<Header
@@ -78,9 +80,9 @@ class App extends Component {
 				{/* Shows a loading screen if the array is empty */}
 				{list ? (
 					<Cards
-						list={toggleView ? favsInFb : list}
+						list={toggleView ? favList : list}
 						pageTitle={toggleView ? 'My Saved List' : 'Search Results'}
-						savedList={this.state.favsInFb.map((item) => item.imdbID)}
+						savedList={this.state.favList.map((item) => item.imdbID)}
 					/>
 				) : (
 					<Loading />
