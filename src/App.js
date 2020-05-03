@@ -16,7 +16,7 @@ class App extends Component {
 			list: [],
 			userInput: '',
 			favList: [],
-			toggleView: false,
+			toggleView: true,
 		};
 	}
 
