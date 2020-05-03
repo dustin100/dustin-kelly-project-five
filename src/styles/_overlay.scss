@@ -4,7 +4,6 @@
 	width: 100%;
 	overflow: hidden;
 	background: #000;
-	opacity: 0.95;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -15,21 +14,31 @@
 
 	h3 {
 		font-size: 3rem;
+		margin-bottom: 1rem;
 		text-align: center;
-		color: #fff;
-		margin-bottom: 2rem;
+		font-family: 'Righteous', cursive;
+		line-height: 3.7rem;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: $lightColor;
 	}
 
 	p {
-		font-size: 1.7rem;
-		margin-bottom: 3rem;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: $lightColor;
+		font-family: 'Lato', sans-serif;
+		line-height: 2.4rem;
 	}
 }
 
 .showDetails {
 	display: flex;
-	font-size: 1.5rem;
-	margin-bottom: 2rem;
+	font-size: 1.7rem;
+	line-height: 20px;
+	font-family: 'Lato', sans-serif;
+	padding-bottom: 0.5rem;
 	justify-content: center;
 
 	li {
@@ -40,26 +49,25 @@
 }
 
 .closeOverlay {
-		display: inline-block;
-		position: absolute;
-		top: 50px;
-		right: 50px;
-		background: transparent;
-		color: $accentOne;
-		border: none;
-		text-decoration: none;
-		font-size: 3rem;
-		text-transform: uppercase;
-		
-
-		&:hover,
-		&:focus {
-			color: $accentTwo;
-		}
-	}
-
-	.ratingStar {
+	display: inline-block;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	background: transparent;
 	color: $accentOne;
-	padding: .5rem;
-	font-size: 1rem;
+	border: none;
+	text-decoration: none;
+	font-size: 3rem;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		color: $accentTwo;
 	}
+}
+
+.ratingStar {
+	color: $accentOne;
+	padding: 0.5rem;
+	font-size: 1rem;
+}

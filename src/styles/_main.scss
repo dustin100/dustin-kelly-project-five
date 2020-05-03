@@ -12,6 +12,12 @@ body {
 	font-size: 3rem;
 	margin-bottom: 4rem;
 	text-align: center;
+	font-family: 'Righteous', cursive;
+	line-height: 3.7rem;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: $accentOne;
 }
 
 .cardWrapper {
@@ -27,11 +33,14 @@ body {
 	margin: 0 auto 4rem auto;
 
 	h2 {
-		font-size: 2.5rem;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		color: $darkColor;
+		font-size: 1.7rem;
+		line-height: 20px;
+		font-family: 'Lato', sans-serif;
+		padding-bottom: 0.5rem;
 	}
 
 	&Bottom {
@@ -47,7 +56,7 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		color: #fff;
+		color: $lightColor;
 		font-size: 2rem;
 		padding-right: 0.5rem;
 		&:last-child,
@@ -56,31 +65,37 @@ body {
 		}
 	}
 
+	.releaseYear {
+		padding-right: 1.5rem;
+	}
+
 	.saveBtn {
 		display: inline-block;
 		background: $accentOne;
-		color: #000;
+		color: $lightColor;
 		padding: 1.5rem 1rem;
 		border: 1px solid $accentOne;
 		text-decoration: none;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 		letter-spacing: 0.7px;
 		text-transform: uppercase;
 		width: 50%;
+		line-height: 2rem;
 
 		&:hover,
 		&:focus {
 			background: $accentTwo;
+			color: $accentOne;
 		}
 	}
 }
 
 .infoIcon {
 	position: absolute;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	color: $accentOne;
 	right: 5px;
-	bottom: 50px;
+	bottom: 55px;
 
 	i {
 		position: relative;
@@ -92,7 +107,6 @@ body {
 		font-weight: bold;
 		white-space: nowrap;
 		position: absolute;
-		// width: 100%;
 		left: -59px;
 		bottom: 2px;
 		transform: scaleX(0);

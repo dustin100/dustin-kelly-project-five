@@ -4,7 +4,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Cards from './components/Cards';
 import Footer from './components/Footer';
-import Loading from './components/Loading';
+import NoResults from './components/NoResults';
 import firebase from './components/firebase';
 
 import './App.scss';
@@ -45,7 +45,6 @@ class App extends Component {
 
 			this.setState({
 				favList: favsInArray,
-
 			});
 		});
 	}
@@ -63,11 +62,11 @@ class App extends Component {
 	};
 
 	showFavs = () => {
-		this.setState({ toggleView: !this.state.toggleView });
+		this.setState({ toggleView: !this.state.toggleView, list: [] });
 	};
 
 	render() {
-		const { toggleView, favList, list } = this.state;
+		const { toggleView, favList, list, userInput } = this.state;
 		return (
 			<div className="App">
 				<Header
@@ -77,7 +76,6 @@ class App extends Component {
 				/>
 				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
 
-				{/* Shows a loading screen if the array is empty */}
 				{list ? (
 					<Cards
 						list={toggleView ? favList : list}
@@ -85,7 +83,7 @@ class App extends Component {
 						savedList={this.state.favList.map((item) => item.imdbID)}
 					/>
 				) : (
-					<Loading />
+					<NoResults userInput={userInput} />
 				)}
 				<Footer companyName="Dustin" />
 			</div>

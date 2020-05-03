@@ -3,15 +3,21 @@
 	text-align: center;
 
 	h1 {
-		font-size: 6rem;
-		margin: 1rem 0;
+		font-size: 5.5rem;
+		margin: 1.5rem 0 0 0;
 		color: $accentOne;
+		font-family: 'Goblin One', cursive;
+		line-height: 8.7rem;
+		text-transform: uppercase;
 	}
 
 	p {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		margin-bottom: 1rem;
 		color: $darkColor;
+		font-family: 'Lato', sans-serif;
+		padding-bottom: 1rem;
+		line-height: 2.4rem;
 	}
 }
 
@@ -21,10 +27,8 @@
 	right: 0;
 	top: 0;
 	color: $accentOne;
-	transition: 300ms transform ease-in-out;
 	&:hover {
-		transform: rotate(90deg);
-		color: $accentTwo;
+		color: $darkColor;
 		cursor: pointer;
 	}
 }
