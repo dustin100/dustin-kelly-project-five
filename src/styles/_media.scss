@@ -26,6 +26,10 @@
 	.submit::-moz-focus-inner {
 		border: 0;
 	}
+.cards .savedToList:after {
+	transform: scaleX(0);
+}
+
 }
 
 @media (min-width: 1400px) {
