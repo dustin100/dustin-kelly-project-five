@@ -1,0 +1,23 @@
+.tryAgain {
+	text-align: center;
+	h3 {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+		text-align: center;
+		font-family: 'Righteous', cursive;
+		line-height: 3.7rem;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: $accentOne;
+	}
+
+	p {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: $darkColor;
+		font-family: 'Lato', sans-serif;
+		padding-bottom: 1rem;
+		line-height: 2.4rem;
+	}
+}

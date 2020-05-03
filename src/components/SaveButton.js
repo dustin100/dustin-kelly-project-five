@@ -55,11 +55,11 @@ class SaveButton extends Component {
 		return (
 			<button onClick={this.handleSaveClick} className="watch saveBtn">
 				{this.checkMatches(this.props.imdbID) ? (
-					<span>
+					<span className="savedToList">
 						Saved <i className="fas fa-heart"></i>
 					</span>
 				) : (
-					<span>
+					<span className ="addToList">
 						Add to List <i className="far fa-heart"></i>
 					</span>
 				)}
