@@ -79,7 +79,7 @@ class App extends Component {
 				{list ? (
 					<Cards
 						list={toggleView ? favList : list}
-						pageTitle={toggleView ? 'My Saved List' : 'Search Results'}
+						pageTitle={toggleView ? 'My Watch List' : 'Search Results'}
 						savedList={this.state.favList.map((item) => item.imdbID)}
 					/>
 				) : (

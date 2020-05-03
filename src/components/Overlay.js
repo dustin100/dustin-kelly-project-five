@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SaveButton from './SaveButton';
 
 class Overlay extends Component {
-
 	closeOverlay = () => {
 		this.props.handleImageClick();
 	};
@@ -39,14 +38,6 @@ class Overlay extends Component {
 					<button className="closeOverlay" onClick={this.closeOverlay}>
 						<i className="far fa-times-circle"></i>
 					</button>
-					<SaveButton
-						imdbID={imdbID}
-						Title={title}
-						Poster={Poster}
-						Type={Type}
-						Year={Year}
-						savedList={this.props.savedList}
-					/>
 				</div>
 			</div>
 		);

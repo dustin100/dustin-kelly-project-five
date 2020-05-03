@@ -10,6 +10,12 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 
+	.headContent {
+		h1 {
+			font-size: 5.5rem;
+		}
+	}
+
 	.searchBtn {
 		width: 20%;
 	}
