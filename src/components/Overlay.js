@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SaveButton from './SaveButton';
 
 class Overlay extends Component {
 	closeOverlay = () => {
@@ -14,10 +13,6 @@ class Overlay extends Component {
 			runtime,
 			title,
 			rating,
-			imdbID,
-			Type,
-			Year,
-			Poster,
 		} = this.props;
 		return (
 			<div className="showOverlay">

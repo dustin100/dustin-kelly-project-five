@@ -9,10 +9,12 @@
 		font-family: 'Goblin One', cursive;
 		line-height: 8.7rem;
 		text-transform: uppercase;
+		font-weight: normal;
 	}
 
 	p {
 		font-size: 1.7rem;
+		font-weight: normal;
 		margin-bottom: 1rem;
 		color: $darkColor;
 		font-family: 'Lato', sans-serif;
@@ -24,6 +26,7 @@
 .userList {
 	position: absolute;
 	font-size: 3rem;
+	font-weight: normal;
 	right: 0;
 	top: 0;
 	color: $accentOne;

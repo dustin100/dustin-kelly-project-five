@@ -18,6 +18,7 @@ body {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	color: $accentOne;
+	font-weight: normal;
 }
 
 .cardWrapper {
@@ -41,6 +42,7 @@ body {
 		line-height: 20px;
 		font-family: 'Lato', sans-serif;
 		padding-bottom: 0.5rem;
+		font-weight: normal;
 	}
 
 	&Bottom {
@@ -57,6 +59,7 @@ body {
 		font-family: 'Lato', sans-serif;
 		font-size: 1.7rem;
 		line-height: 2rem;
+		font-weight: normal;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -83,10 +86,11 @@ body {
 		text-transform: uppercase;
 		width: 50%;
 		font-family: 'Lato', sans-serif;
+		font-weight: normal;
 		font-size: 1.3rem;
 		line-height: 1.6rem;
 		text-align: center;
-		letter-spacing: 0.03em;
+		letter-spacing: 0.07em;
 
 		&:hover,
 		&:focus {
@@ -104,10 +108,10 @@ body {
 		content: 'remove from list';
 		position: absolute;
 		top: 28px;
-		left: 34px;
+		left: 20px;
 		font-family: 'Lato', sans-serif;
-		font-size: .7rem;
-		font-weight: bold;
+		font-size: 8px;
+		font-weight: normal;
 		display: block;
 		transform: scaleX(1);
 		transition: transform 200ms ease-in;
@@ -132,7 +136,7 @@ body {
 		font-weight: bold;
 		white-space: nowrap;
 		position: absolute;
-		left: -62px;
+		left: -69px;
 		bottom: 2px;
 		transform: scaleX(0);
 		transform-origin: right;

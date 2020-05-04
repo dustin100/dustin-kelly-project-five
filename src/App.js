@@ -41,7 +41,11 @@ class App extends Component {
 		// grabs data from firebase and coverts the object into an array and adds it to state
 		const dbRef = firebase.database().ref();
 		dbRef.on('value', (result) => {
-			const favsInArray = Object.values(result.val());
+			const data = result.val();
+			const favsInArray = [];
+			for (let key in data) {
+				favsInArray.push(data[key]);
+			}
 
 			this.setState({
 				favList: favsInArray,
