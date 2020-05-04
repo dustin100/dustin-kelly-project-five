@@ -3,18 +3,24 @@ import CardImage from './CardImage';
 import SaveButton from './SaveButton';
 import posterDefault from '../assets/no-poster-available.jpg';
 
-
 // Changes text into icons
 const textToIcon = (item) => {
 	return item === 'movie' ? (
 		<i className="fas fa-film"></i>
 	) : (
-			<i className="fas fa-tv"></i>
-		);
+		<i className="fas fa-tv"></i>
+	);
 };
 // if poster is missing adds a default image
 const defaultImage = (image) => {
 	return image.length > 5 ? image : posterDefault;
+};
+
+// Make sure React key is unique because there are duplicate imdbIds
+const randomNumberForKey = (newkey) => {
+	let item = Math.floor(Math.random() * 9999 + 1);
+	newkey = newkey + item;
+	return newkey;
 };
 
 // renders each card based props passed from app.js
@@ -25,7 +31,11 @@ const Cards = (props) => {
 			<div className="cardWrapper">
 				{props.list.map(({ Title, imdbID, Poster, Type, Year }) => {
 					return (
-						<div className="cards" tabIndex="0" key={imdbID}>
+						<div
+							className="cards"
+							tabIndex="0"
+							key={randomNumberForKey(imdbID)}
+						>
 							<div className="cardsTop">
 								<h2>{Title}</h2>
 							</div>
