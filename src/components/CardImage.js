@@ -18,6 +18,7 @@ class CardImage extends Component {
 				params: {
 					apikey: '4790b397',
 					i: this.state.imdbID,
+					plot: 'full',
 				},
 			});
 			this.setState({
