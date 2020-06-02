@@ -33,6 +33,7 @@ class SearchBar extends Component {
 							type="search"
 							id="site-search"
 							name="q"
+							required
 							placeholder="search for a movie or tv show"
 							aria-label="Search through site content"
 							value={this.state.inputValue}

@@ -25,7 +25,7 @@ class App extends Component {
 			const listRequest = await axios.get('https://www.omdbapi.com/', {
 				params: {
 					apikey: '4790b397',
-					s: this.state.userInput ? this.state.userInput : 'star wars',
+					s: this.state.userInput,
 				},
 			});
 			this.setState({
@@ -37,7 +37,6 @@ class App extends Component {
 	};
 
 	componentDidMount() {
-		this.fetchData();
 		// grabs data from firebase and coverts the object into an array and adds it to state
 		const dbRef = firebase.database().ref();
 		dbRef.on('value', (result) => {
@@ -66,7 +65,7 @@ class App extends Component {
 	};
 
 	showFavs = () => {
-		this.setState({ toggleView: !this.state.toggleView, list: [] });
+		this.setState({ toggleView: !this.state.toggleView });
 	};
 
 	render() {

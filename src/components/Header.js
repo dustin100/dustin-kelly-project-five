@@ -13,7 +13,7 @@ const Header = ( {title, tagLine, showFavs}) => {
 				<div onClick={showFavs} className="userList">
 					<p className="aboveBtn">Go to</p>
 					<button className="btn" onClick={toggleTrueFalse}>
-						{text ? `My List` : `Search Results`}
+						{text ? `My List` : `Search results`}
 					</button>
 				</div>
 			</div>
