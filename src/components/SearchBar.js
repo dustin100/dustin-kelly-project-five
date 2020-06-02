@@ -9,8 +9,9 @@ class SearchBar extends Component {
 	}
 
 	handleChange = (e) => {
+	
 		this.setState({
-			userInput: e.target.value,
+			userInput: e.target.value.replace(/\s+/g,' ').trim(),
 		});
 	};
 
