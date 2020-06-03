@@ -76,6 +76,7 @@ class App extends Component {
 					title="Free Time"
 					tagLine="Find your favorite movies or tv shows to watch later when you have some free time"
 					showFavs={this.showFavs}
+					toggleView = {this.state.toggleView}
 				/>
 				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
 

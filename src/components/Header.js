@@ -1,10 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Header = ( {title, tagLine, showFavs}) => {
-
-	const [text, setText] = useState(false);
-	const toggleTrueFalse = () => setText(!text);
-	
+const Header = ({ title, tagLine, showFavs, toggleView }) => {
 	return (
 		<header>
 			<div className="wrapper headContent">
@@ -12,9 +8,7 @@ const Header = ( {title, tagLine, showFavs}) => {
 				<p>{tagLine}</p>
 				<div onClick={showFavs} className="userList">
 					<p className="aboveBtn">Go to</p>
-					<button className="btn" onClick={toggleTrueFalse}>
-						{text ? `My List` : `Search results`}
-					</button>
+					<button className="btn">{toggleView ? `Results` : `My List`}</button>
 				</div>
 			</div>
 		</header>

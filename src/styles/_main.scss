@@ -103,6 +103,9 @@ body {
 			transform: scaleX(1);
 		}
 	}
+	.savedToList i {
+		color: red;
+	}
 
 	.savedToList:after {
 		content: 'remove from list';
