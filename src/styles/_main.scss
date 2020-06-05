@@ -4,7 +4,13 @@
 	width: 90%;
 }
 
-body {
+.listPage  {
+	
+		background-color: #333;
+	
+}
+
+body + .homePage {
 	background: $mainColor;
 }
 

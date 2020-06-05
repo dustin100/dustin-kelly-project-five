@@ -16,7 +16,7 @@ class App extends Component {
 			list: [],
 			userInput: '',
 			favList: [],
-			toggleView: true,
+			toggleView: false,
 		};
 	}
 
@@ -71,12 +71,12 @@ class App extends Component {
 	render() {
 		const { toggleView, favList, list, userInput } = this.state;
 		return (
-			<div className="App">
+			<div className={toggleView ? 'homePage' : 'listPage'}>
 				<Header
 					title="Free Time"
 					tagLine="Find your favorite movies or tv shows to watch later when you have some free time"
 					showFavs={this.showFavs}
-					toggleView = {this.state.toggleView}
+					toggleView={this.state.toggleView}
 				/>
 				<SearchBar onSubmittedSearch={this.onSubmittedSearch} />
 
