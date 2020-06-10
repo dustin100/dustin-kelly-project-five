@@ -4,7 +4,13 @@
 	width: 90%;
 }
 
-body {
+.listPage {
+	display: inline-block;
+	width: 100%;
+	background-color:$accentTwo;;
+}
+
+ body {
 	background: $mainColor;
 }
 
@@ -103,6 +109,9 @@ body {
 			transform: scaleX(1);
 		}
 	}
+	.savedToList i {
+		color: red;
+	}
 
 	.savedToList:after {
 		content: 'remove from list';
@@ -152,4 +161,12 @@ body {
 .imgLink:hover,
 .imgLink:focus {
 	opacity: 0.2;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
 }

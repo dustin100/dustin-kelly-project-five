@@ -9,8 +9,9 @@ class SearchBar extends Component {
 	}
 
 	handleChange = (e) => {
+	
 		this.setState({
-			userInput: e.target.value,
+			userInput: e.target.value.replace(/\s+/g,' ').trim(),
 		});
 	};
 
@@ -21,7 +22,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<section>
+			<section className = {this.props.toggleView ? 'hide' : 'show'}>
 				<div className="wrapper searchBarArea">
 					<form onSubmit={this.handleSubmit}>
 						<label className="visuallyHidden" htmlFor="site-search">
@@ -32,6 +33,7 @@ class SearchBar extends Component {
 							type="search"
 							id="site-search"
 							name="q"
+							required
 							placeholder="search for a movie or tv show"
 							aria-label="Search through site content"
 							value={this.state.inputValue}
