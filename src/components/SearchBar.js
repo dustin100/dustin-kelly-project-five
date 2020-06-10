@@ -22,7 +22,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<section>
+			<section className = {this.props.toggleView ? 'hide' : 'show'}>
 				<div className="wrapper searchBarArea">
 					<form onSubmit={this.handleSubmit}>
 						<label className="visuallyHidden" htmlFor="site-search">

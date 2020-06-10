@@ -4,13 +4,13 @@
 	width: 90%;
 }
 
-.listPage  {
-	
-		background-color: #333;
-	
+.listPage {
+	display: inline-block;
+	width: 100%;
+	background-color:$accentTwo;;
 }
 
-body + .homePage {
+ body {
 	background: $mainColor;
 }
 
@@ -161,4 +161,12 @@ body + .homePage {
 .imgLink:hover,
 .imgLink:focus {
 	opacity: 0.2;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
 }
